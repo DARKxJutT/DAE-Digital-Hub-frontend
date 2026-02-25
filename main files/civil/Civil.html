@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="civil.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="../index.html"><img src="../logo.png" alt="DAE Digital Library Logo"></a>
+      </div>
+      
+      <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+      <label for="mobile-menu-toggle" class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+      
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+          <li class="nav-item dropdown">
+            <a href="../#resources" class="nav-link active">Cources <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="../IOTAT/IOTAT.html" class="active">IOTAT</a></li>
+              <li><a href="../Mechinical/mechinacal.html">Mechanical Engineering</a></li>
+              <li><a href="../IT-Engineering/IT-home-page.html">IT Engineering</a></li>
+              <li><a href="../MMT-Engineering/MMT.html">MMAT</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+          
+        </ul>
+      </nav>
+      
+      <div class="search-container">
+        <form class="search-form">
+          <input type="text" placeholder="Search civil resources..." class="search-input">
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+      </div>
+      <li class="nav-items"><a href="../login.html" class="log-in">Log In</a></li>
+    </div>
+  </header>
+
+  <!-- Department Hero Section -->
+  <section class="department-hero">
+  
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="text">Civil Engineering Resources</h1>
+        <p>Access textbooks, research papers, lecture notes, and other learning materials for Civil Engineering students</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <a href="../index.html">Home</a> &gt; <a href="../#resources">Resources</a> &gt; <span>Civil Engineering</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="department-main">
+    <div class="container">
+      <div class="department-content">
+        <!-- About Department -->
+        <section class="department-about">
+          <h2><i class="fas fa-building"></i> About Civil Engineering</h2>
+          <p>The Civil Engineering department at DAE provides comprehensive resources for students pursuing careers in construction, infrastructure development, and structural design. Our digital library offers access to the latest textbooks, research papers, and practical guides in the field.</p>
+        </section>
+
+        <!-- Resources Grid -->
+        <section class="resources-section">
+          <h2><i class="fas fa-book-open"></i> Learning Resources</h2>
+          <div class="resources-grid">
+            <div class="resource-card">
+              <div class="resource-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <h3>Textbooks</h3>
+              <ul>
+                <li><a href="civil-textbooks.html">Structural Analysis</a></li>
+                <li><a href="civil-textbooks.html">Concrete Technology</a></li>
+                <li><a href="civil-textbooks.html">Geotechnical Engineering</a></li>
+                <li><a href="civil-textbooks.html">Fluid Mechanics</a></li>
+              </ul>
+              <a href="civil-textbooks.html" class="view-all">View All Textbooks →</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <h3>Lecture Notes</h3>
+              <ul>
+                <li><a href="#">Surveying Techniques</a></li>
+                <li><a href="#">Construction Management</a></li>
+                <li><a href="#">Transportation Engineering</a></li>
+                <li><a href="#">Environmental Engineering</a></li>
+              </ul>
+              <a href="#" class="view-all">View All Notes →</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <h3>Research Papers</h3>
+              <ul>
+                <li><a href="#">Sustainable Materials</a></li>
+                <li><a href="#">Earthquake Engineering</a></li>
+                <li><a href="#">Bridge Design</a></li>
+                <li><a href="#">Urban Planning</a></li>
+              </ul>
+              <a href="#" class="view-all">View All Papers →</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-icon">
+                <i class="fas fa-video"></i>
+              </div>
+              <h3>Video Lectures</h3>
+              <ul>
+                <li><a href="#">AutoCAD Tutorials</a></li>
+                <li><a href="#">Structural Modeling</a></li>
+                <li><a href="#">Construction Site Visits</a></li>
+                <li><a href="#">Material Testing</a></li>
+              </ul>
+              <a href="#" class="view-all">View All Videos →</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Software Tools -->
+        <section class="software-section">
+          <h2><i class="fas fa-laptop-code"></i> Software Tools</h2>
+          <div class="software-grid">
+            <div class="software-card">
+              <img src="autocad-icon.png" alt="AutoCAD">
+              <h3>AutoCAD</h3>
+              <p>2D and 3D computer-aided design software</p>
+              <a href="#" class="software-download">Download Guide <i class="fas fa-download"></i></a>
+            </div>
+
+            <div class="software-card">
+              <img src="staad-icon.png" alt="STAAD.Pro">
+              <h3>STAAD.Pro</h3>
+              <p>Structural analysis and design software</p>
+              <a href="#" class="software-download">Download Guide <i class="fas fa-download"></i></a>
+            </div>
+
+            <div class="software-card">
+              <img src="revit-icon.png" alt="Revit">
+              <h3>Revit</h3>
+              <p>Building information modeling software</p>
+              <a href="#" class="software-download">Download Guide <i class="fas fa-download"></i></a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Faculty Resources -->
+        <section class="faculty-section">
+          <h2><i class="fas fa-chalkboard-teacher"></i> Faculty Resources</h2>
+          <div class="faculty-grid">
+            <div class="faculty-card">
+              <img src="professor1.jpg" alt="prof.aabbcc">
+              <h3>Prof. aabbaa</h3>
+              <p>Structural Engineering</p>
+              <a href="mailto:john.smith@dae.edu" class="faculty-contact">Contact</a>
+            </div>
+
+            <div class="faculty-card">
+              <img src="professor2.jpg" alt="Shehroz lava">
+              <h3>Prof. Shehroz lava</h3>
+              <p>Geotechnical Engineering</p>
+              <a href="mailto:sarah.johnson@dae.edu" class="faculty-contact">Contact</a>
+            </div>
+
+            <div class="faculty-card">
+              <img src="professor3.jpg" alt="Prof. Ammar">
+              <h3>Prof. Ammar</h3>
+              <p>Transportation Engineering</p>
+              <a href="mailto:michael.chen@dae.edu" class="faculty-contact">Contact</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civil Engineering Resources | DAE Digital Library</title>
+    <link rel="stylesheet" href="civil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  <!-- <> -->
+  
+   
+        <div class="footer-bottom">
+          <p>&copy; 2025DAE Digital Library. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

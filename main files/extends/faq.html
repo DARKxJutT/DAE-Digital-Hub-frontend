@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAE Digital Library - FAQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .faq-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .faq-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .faq-subtitle {
+            color: var(--gray-color);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .faq-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .faq-nav-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-nav-btn:hover, .faq-nav-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .faq-category {
+            margin-bottom: 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .faq-category-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px dashed var(--accent-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-category-title i {
+            margin-right: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--accent-color);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--accent-color);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            background-color: rgba(248, 249, 250, 0.7);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .faq-search {
+            margin-bottom: 2rem;
+            position: relative;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-search input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: 2px solid #ddd;
+            font-size: 1rem;
+            transition: var(--transition);
+            padding-right: 3rem;
+        }
+        
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2);
+        }
+        
+        .faq-search i {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-color);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray-color);
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-title {
+                font-size: 2rem;
+            }
+            
+            .faq-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .faq-nav-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <header class="faq-header">
+            <h1 class="faq-title">DAE Digital Library</h1>
+            <p class="faq-subtitle">Find answers to your questions about our digital resources, access, and services</p>
+        </header>
+        
+        <div class="faq-search">
+            <input type="text" placeholder="Search FAQs...">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <nav class="faq-nav">
+            <button class="faq-nav-btn active" data-category="general">
+                <i class="fas fa-question-circle"></i> General
+            </button>
+            <button class="faq-nav-btn" data-category="access">
+                <i class="fas fa-key"></i> Access
+            </button>
+            <button class="faq-nav-btn" data-category="resources">
+                <i class="fas fa-book"></i> Resources
+            </button>
+            <button class="faq-nav-btn" data-category="technical">
+                <i class="fas fa-laptop"></i> Technical
+            </button>
+            <button class="faq-nav-btn" data-category="account">
+                <i class="fas fa-user"></i> Account
+            </button>
+            <button class="faq-nav-btn" data-category="copyright">
+                <i class="fas fa-copyright"></i> Copyright
+            </button>
+        </nav>
+        
+        <div class="no-results">
+            <i class="fas fa-search fa-3x" style="margin-bottom: 1rem; color: var(--accent-color);"></i>
+            <h3>No results found</h3>
+            <p>Try different keywords or browse by category</p>
+        </div>
+        
+        <!-- General Questions -->
+        <div class="faq-category" id="general">
+            <h2 class="faq-category-title"><i class="fas fa-question-circle"></i> General Questions</h2>
+            
+            
+                <div class="faq-item">
+                <div class="faq-question">1. What is the DAE Digital Library?</div>
+                <div class="faq-answer">
+                    The DAE Digital Library is an online platform providing access to digital resources including e-books, journals, research papers, and multimedia content.
+                </div>
+            </div>
+               
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Who can access the DAE Digital Library?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    The library is available to all currently enrolled DAE students, faculty members, and staff with valid institutional credentials.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is there a mobile app for the library?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes, But in its development Phase.
+                </div>
+            </div>
+        </div>
+
+      
+
+
+            
+        
+        <!-- Access Questions -->
+        <div class="faq-category" id="access" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-key"></i> Access & Authentication</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I log in to the digital library?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+
+
+
+                <div class="faq-item">
+                    <div class="faq-question"> How do I contact library support?</div>
+                    <div class="faq-answer">
+                        You can reach us via email at library@dae.edu, phone at +123-456-7890 during business hours, or through the live chat feature on our website.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question"> Are there any tutorials for using the library?</div>
+                    <div class="faq-answer">
+                        Yes, we offer video tutorials, interactive guides, and weekly webinars. Visit our "Help & Tutorials" section to access these resources.
+                    </div>
+                </div>
+
+
+ <div class="faq-item">
+                <div class="faq-question"> Can I access library resources after graduation?</div>
+                <div class="faq-answer">
+                    Use your institutional username and password (the same credentials you use for the student portal or campus WiFi).
+                </div>
+            </div>
+
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I access from off-campus?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes, you can access all resources remotely by logging in with your institutional credentials. Some resources may require VPN for full access.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Why am I getting "Access Denied"?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    This typically means your account is not active or you're not properly authenticated. Contact the IT helpdesk if the issue persists after trying to log out and back in.
+                </div>
+</div>
+
+                <div class="faq-question"> Does the library offer research assistance?</div>
+                <div class="faq-answer">
+                    Yes, our librarians provide research consultations, citation help, and database search strategies. Book an appointment through your account dashboard.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question"> Are there any late fees for digital resources?</div>
+                <div class="faq-answer">
+                    No late fees, but some materials may become automatically unavailable after the loan period expires. Some items may have limited simultaneous users.
+                </div>
+            </div>
+
+            </div>
+        </div>
+        
+        <!-- Resources Questions -->
+        <div class="faq-category" id="resources" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-book"></i> Resources & Content</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What types of resources are available?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We offer e-books, academic journals, research papers, video lectures, interactive learning modules, and more across all DAE disciplines. Our collection is continuously growing.
+                </div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question">9. How do I recommend a book for purchase?</div>
+                <div class="faq-answer">
+                    Use the "Suggest a Purchase" form in your account. Faculty can also contact their department's library liaison for acquisition requests.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I request new resources?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Use the "Suggest a Resource" form in your account dashboard. Faculty can also contact their department liaison librarian for acquisition requests.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Are there any download limits?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    You may download up to 20 items per day for personal academic use, in compliance with copyright restrictions. Some publishers may impose additional limits.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technical Questions -->
+        <div class="faq-category" id="technical" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-laptop"></i> Technical Support</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What browsers are supported?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    We support Chrome, Firefox, Safari, Edge, and Opera in their most recent versions. For best performance, we recommend using Chrome or Firefox.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Why won't this ebook open?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Some resources require specific readers or plugins. Check the resource page for requirements, try a different browser, or install the recommended software.
+                </div>
+            </div>
+            
+
+    <!-- Added new account questions -->
+            <div class="faq-item">
+                <div class="faq-question">4. How do I change my notification preferences?</div>
+                <div class="faq-answer">
+                    Adjust notifications in your account settings under "Communication Preferences."
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">5. Can I export my reading history?</div>
+                <div class="faq-answer">
+                    Yes, you can export your reading history and citations in CSV or RIS format from your account dashboard.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">6. How do I delete saved searches?</div>
+                <div class="faq-answer">
+                    Manage saved searches in your account under "Search History." You can delete individual items or clear all.
+                </div>
+            </div>
+            
+
+
+
+        <!-- Access Questions - Now with 10 items -->
+        <div class="faq-category" id="access" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-key"></i> Access & Authentication</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">1. How do I log in to the digital library?</div>
+                <div class="faq-answer">
+                    Use your institutional username and password (the same credentials you use for the student portal or campus WiFi).
+                </div>
+            </div>
+            
+            <!-- Added new access questions -->
+            <div class="faq-item">
+                <div class="faq-question">4. Why does my session keep timing out?</div>
+                <div class="faq-answer">
+                    For security, sessions expire after 60 minutes of inactivity. You can enable "Keep me logged in" for longer sessions on personal devices.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">5. Can I access the library from multiple devices?</div>
+                <div class="faq-answer">
+                    Yes, you can be logged in on up to 5 devices simultaneously. Some high-demand resources may limit concurrent access.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">6. What if I'm having trouble with two-factor authentication?</div>
+                <div class="faq-answer">
+                    Contact the IT helpdesk for assistance with 2FA issues. Have your student ID number ready when you call.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">7. Do I need VPN to access all resources?</div>
+                <div class="faq-answer">
+                    Most resources don't require VPN, but some publisher content may need it. The system will prompt you if VPN is required.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">8. How do I access restricted databases?</div>
+                <div class="faq-answer">
+                    Restricted databases require special permissions. Faculty can request access; students need faculty sponsorship for these resources.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">9. Can visiting scholars get library access?</div>
+                <div class="faq-answer">
+                    Yes, visiting scholars can obtain temporary credentials through their host department. Allow 3-5 business days for setup.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">10. Why can't I access some resources from my country?</div>
+                <div class="faq-answer">
+                    Some publishers impose geographic restrictions. Try using our VPN service or contact us for alternative access options.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Resources Questions - Now with 10 items -->
+        <div class="faq-category" id="resources" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-book"></i> Resources & Content</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">1. What types of resources are available?</div>
+                <div class="faq-answer">
+                    We offer e-books, academic journals, research papers, video lectures, and interactive learning modules across all disciplines.
+                </div>
+            </div>
+            
+            <!-- Added new resources questions -->
+            <div class="faq-item">
+                <div class="faq-question">4. How do I find textbooks for my courses?</div>
+                <div class="faq-answer">
+                    Search by course code in the "Course Reserves" section or check with your instructor for required materials available through the library.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">5. Are there audiobooks available?</div>
+                <div class="faq-answer">
+                    Yes, we have a growing collection of academic and leisure audiobooks. Look for the "Audio" filter when searching.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">6. Can I access newspapers and magazines?</div>
+                <div class="faq-answer">
+                    Yes, we provide access to major international newspapers and thousands of magazines through our PressReader and ProQuest subscriptions.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">7. How do I access archival materials?</div>
+                <div class="faq-answer">
+                    Our digital archives are available under "Special Collections." Some materials may require an appointment with the archivist.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">8. Are there resources for visually impaired users?</div>
+                <div class="faq-answer">
+                    Yes, we offer screen-reader compatible materials, adjustable text sizes, and descriptive audio. Contact accessibility services for assistance.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">9. How current are the journal subscriptions?</div>
+                <div class="faq-answer">
+                    Most journals have current issues available, with embargoes of 6-12 months for some publications. Check individual journal pages for details.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">10. Can I access datasets for research?</div>
+                <div class="faq-answer">
+                    Yes, we provide access to numerous datasets. Visit the "Data & Statistics" section or consult with a subject librarian for your field.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technical Questions - Now with 10 items -->
+        <div class="faq-category" id="technical" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-laptop"></i> Technical Support</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">1. What browsers are supported?</div>
+                <div class="faq-answer">
+                    We support Chrome, Firefox, Safari, Edge, and Opera in their most recent versions.
+                </div>
+            </div>
+            
+            <!-- Added new technical questions -->
+            <div class="faq-item">
+                <div class="faq-question">4. Why are some pages loading slowly?</div>
+                <div class="faq-answer">
+                    This could be due to your internet connection, high traffic times, or resource-intensive content. Try during off-peak hours or download materials.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">5. How do I enable JavaScript for the library site?</div>
+                <div class="faq-answer">
+                    Check your browser settings to allow JavaScript for our domain. Most features won't work properly with JavaScript disabled.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">6. What should I do if a resource won't open?</div>
+                <div class="faq-answer">
+                    First try clearing your cache and cookies. If that doesn't help, report the issue through our technical support form with details.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">7. Are there keyboard shortcuts for navigation?</div>
+                <div class="faq-answer">
+                    Yes, press '?' while on the site to view available keyboard shortcuts for easier navigation.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">8. Why does the mobile app crash?</div>
+                <div class="faq-answer">
+                    Ensure you're using the latest version. If problems persist, uninstall and reinstall the app, or try the mobile website instead.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">9. How do I configure my ebook reader?</div>
+                <div class="faq-answer">
+                    Visit our "Ebook Help" section for device-specific setup guides. Most readers work with Adobe Digital Editions.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">10. What download formats are available?</div>
+                <div class="faq-answer">
+                    Most articles offer PDF, while ebooks may provide EPUB or PDF. Some videos allow MP4 download for offline viewing.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Account Questions - Now with 10 items -->
+        <div class="faq-category" id="account" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-user"></i> Account & Personalization</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">1. Can I save my reading progress?</div>
+                <div class="faq-answer">
+                    Yes, your reading progress is automatically saved for most ebooks when logged in.
+                </div>
+            </div>
+            
+
+
+
+            <div class="faq-item">
+                <div class="faq-question">7. Can I share my reading lists with others?</div>
+                <div class="faq-answer">
+                    Yes, reading lists can be shared via link or exported. Some lists may be made public with librarian approval.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">8. How do I change my display name?</div>
+                <div class="faq-answer">
+                    Display names can be changed in account settings, but your official institutional name will still show to administrators.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">9. What happens if I exceed download limits?</div>
+                <div class="faq-answer">
+                    You'll receive a warning, and temporary download restrictions may apply. Limits reset daily at midnight.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">10. Can I merge multiple reading lists?</div>
+                <div class="faq-answer">
+                    Yes, use the "Combine Lists" feature in your reading list manager to merge lists and remove duplicates.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright Questions - Now with 10 items -->
+        <div class="faq-category" id="copyright" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-copyright"></i> Copyright & Usage</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">1. Can I share resources with classmates?</div>
+                <div class="faq-answer">
+                    You may share permalinks, but distributing downloaded copies may violate copyright agreements.
+                </div>
+            </div>
+            
+            <!-- Added new copyright questions -->
+            <div class="faq-item">
+                <div class="faq-question">4. Can I use images in my thesis?</div>
+                <div class="faq-answer">
+                    For academic works, most images can be used with proper attribution. Check each resource's terms or consult copyright office.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">5. What's the policy on course packs?</div>
+                <div class="faq-answer">
+                    Course packs containing library materials require copyright clearance. Contact the copyright office for assistance.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">6. Can I translate library materials?</div>
+                <div class="faq-answer">
+                    Translations for personal study are permitted, but publishing translations requires permission from copyright holders.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">7. Are there restrictions on data mining?</div>
+                <div class="faq-answer">
+                    Some licenses permit text/data mining for research. Check our "Computational Access" guide or consult a librarian.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">8. Can I use resources for commercial purposes?</div>
+                <div class="faq-answer">
+                    No, all resources are licensed for academic use only. Contact the technology transfer office for commercial inquiries.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">9. What's the policy on interlibrary loan?</div>
+                <div class="faq-answer">
+                    We participate in interlibrary loan for materials we don't own, following copyright guidelines for loan limits.
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Videos are buffering slowly
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Video performance depends on your internet connection. Try lowering the playback quality, downloading for offline viewing, or connecting to a faster network.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Account Questions -->
+        <div class="faq-category" id="account" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-user"></i> Account & Personalization</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I save my reading progress?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes, when logged in your reading progress is automatically saved for most ebooks. You can also bookmark pages and add notes.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I create reading lists?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Use the "Add to List" button on any resource page to create and manage custom reading lists. You can organize them by course, project, or topic.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Are my searches private?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes, your search history and reading activity are confidential and protected under our privacy policy. You can clear your history in account settings.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright Questions -->
+        <div class="faq-category" id="copyright" style="display: none;">
+            <h2 class="faq-category-title"><i class="fas fa-copyright"></i> Copyright & Usage</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I share resources with classmates?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    You may share permalinks to resources, but distributing downloaded copies may violate copyright and license agreements. Encourage others to access through the library.
+                </div>
+            </div>
+            
+
+
+     <div class="faq-item">
+                <div class="faq-question">10. How do I get permission to reuse content?</div>
+                <div class="faq-answer">
+                    Use our Copyright Clearance Service or contact the publisher directly for reuse permissions beyond fair use.
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are the copyright restrictions?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Resources are for personal academic use only. Commercial use, redistribution, or systematic downloading is prohibited. Always check the terms for each resource.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I print chapters from ebooks?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Most ebooks allow limited printing (usually 10-20% of content) for personal study purposes. The platform will warn you if you exceed allowed limits.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category navigation
+            const navButtons = document.querySelectorAll('.faq-nav-btn');
+            const categories = document.querySelectorAll('.faq-category');
+            
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Show selected category
+                    const categoryId = button.dataset.category;
+                    categories.forEach(cat => {
+                        if (cat.id === categoryId) {
+                            cat.style.display = 'block';
+                            // Trigger animation
+                            cat.style.animation = 'none';
+                            void cat.offsetWidth; // Trigger reflow
+                            cat.style.animation = 'fadeIn 0.5s ease';
+                        } else {
+                            cat.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // FAQ item toggle
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentElement;
+                    item.classList.toggle('active');
+                    
+                    // Close other items in the same category
+                    const category = item.closest('.faq-category');
+                    if (category) {
+                        const allItems = category.querySelectorAll('.faq-item');
+                        allItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.querySelector('.faq-search input');
+            const noResults = document.querySelector('.no-results');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let hasResults = false;
+                
+                if (searchTerm.length < 2) {
+                    // Show all when search is cleared
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.style.display = 'block';
+                    });
+                    noResults.style.display = 'none';
+                    return;
+                }
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        hasResults = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                noResults.style.display = hasResults ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

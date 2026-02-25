@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Web Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="prog.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>DAE Digital Hub</span>
+                </div>
+                <div class="nav-right">
+                    <div class="nav-links">
+                        <a href="#html-css" class="nav-link">HTML/CSS</a>
+                        <a href="#python" class="nav-link">Python</a>
+                        <a href="#web-dev" class="nav-link">Web Dev</a>
+                        <a href="#hindi-resources" class="nav-link">Hindi Resources</a>
+                    </div>
+                    <button class="contact-btn pulse">
+                        <i class="fas fa-envelope"></i> Contact
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Master Web Development</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">Free resources to learn HTML, CSS, Python and modern web development</p>
+            <div class="scroll-down animate__animated animate__bounce animate__infinite animate__delay-2s">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="floating-bubbles">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- HTML/CSS Section -->
+        <section id="html-css" class="course-section animate__animated animate__fadeIn">
+            <h2><i class="fab fa-html5"></i> HTML & CSS</h2>
+            <p class="section-description">Learn the building blocks of web development</p>
+            
+            <h3 class="resource-type-title"><i class="fas fa-book"></i> Recommended Books</h3>
+            <div class="resources-grid">
+                <!-- Book cards with hover animations -->
+                <div class="resource-card book animate__animated animate__fadeInLeft">
+                    <div class="resource-image">
+                        <img src="https://m.media-amazon.com/images/I/31b4K-hFH-L._SY445_SX342_.jpg" alt="HTML and CSS Book">
+                    </div>
+                    <div class="resource-info">
+                        <h3>HTML & CSS: Design and Build Websites</h3>
+                        <p>By Jon Duckett</p>
+                        <a href="https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189" target="_blank" class="resource-btn">
+                            <i class="fas fa-book"></i> Get Book
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-card book animate__animated animate__fadeInUp">
+                    <div class="resource-image">
+                        <img src="https://m.media-amazon.com/images/I/71Q5t+ZkrIL._SY425_.jpg" alt="CSS Secrets">
+                    </div>
+                    <div class="resource-info">
+                        <h3>CSS Secrets</h3>
+                        <p>By Lea Verou</p>
+                        <a href="https://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635" target="_blank" class="resource-btn">
+                            <i class="fas fa-book"></i> Get Book
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card book animate__animated animate__fadeInRight">
+                    <div class="resource-image">
+                        <img src="https://m.media-amazon.com/images/I/51MT0Mc7M2L._SY425_.jpg" alt="Responsive Web Design">
+                    </div>
+                    <div class="resource-info">
+                        <h3>Responsive Web Design</h3>
+                        <p>By Ethan Marcotte</p>
+                        <a href="https://www.amazon.com/Responsive-Web-Design-Ethan-Marcotte/dp/098444257X" target="_blank" class="resource-btn">
+                            <i class="fas fa-book"></i> Get Book
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="resource-type-title"><i class="fab fa-youtube"></i> Video Lectures</h3>
+            <div class="resources-grid">
+                <div class="resource-card video animate__animated animate__fadeInLeft">
+                    <div class="resource-image">
+                        <img src="https://i.ytimg.com/vi/UB1O30fR-EE/maxresdefault.jpg" alt="HTML Crash Course">
+                    </div>
+                    <div class="resource-info">
+                        <h3>HTML Crash Course</h3>
+                        <p>By Traversy Media</p>
+                        <a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank" class="resource-btn">
+                            <i class="fab fa-youtube"></i> Watch Video
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-card video animate__animated animate__fadeInUp">
+                    <div class="resource-image">
+                        <img src="https://i.ytimg.com/vi/yfoY53QXEnI/maxresdefault.jpg" alt="CSS Crash Course">
+                    </div>
+                    <div class="resource-info">
+                        <h3>CSS Crash Course</h3>
+                        <p>By Traversy Media</p>
+                        <a href="https://www.youtube.com/watch?v=yfoY53QXEnI" target="_blank" class="resource-btn">
+                            <i class="fab fa-youtube"></i> Watch Video
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card video animate__animated animate__fadeInRight">
+                    <div class="resource-image">
+                        <img src="https://i.ytimg.com/vi/1Rs2ND1ryYc/maxresdefault.jpg" alt="CSS Grid Course">
+                    </div>
+                    <div class="resource-info">
+                        <h3>CSS Grid Complete Guide</h3>
+                        <p>By freeCodeCamp</p>
+                        <a href="https://www.youtube.com/watch?v=1Rs2ND1ryYc" target="_blank" class="resource-btn">
+                            <i class="fab fa-youtube"></i> Watch Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Python Section -->
+        <section id="python" class="course-section">
+            <h2><i class="fab fa-python"></i> Python Programming</h2>
+            <p class="section-description">Learn one of the most versatile programming languages</p>
+            
+            <h3 class="resource-type-title"><i class="fas fa-book"></i> Recommended Books</h3>
+            <div class="resources-grid">
+                <!-- Book 1 -->
+                <div class="resource-card book">
+                    <div class="resource-image">
+                        <img src="https://m.media-amazon.com/images/I/71NUZ+rHN2L._SY425_.jpg" alt="Python Crash Course">
+                    </div>
+                    <div class="resource-info">
+                        <h3>Python Crash Course</h3>
+                        <p>By Eric Matthes</p>
+                        <a href="https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280" target="_blank" class="resource-btn">
+                            <i class="fas fa-book"></i> Get Book
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="resource-card book">
+                    <div class="resource-image">
+                        <img src="https://m.media-amazon.com/images/I/91asIC1fRwL._SY425_.jpg" alt="Automate the Boring Stuff">
+                    </div>
+                    <div class="resource-info">
+                        <h3>Automate the Boring Stuff</h3>
+                        <p>By Al Sweigart</p>
+                        <a href="https://www.amazon.com/Automate-Boring-Stuff-Python-2nd/dp/1593279922" target="_blank" class="resource-btn">
+                            <i class="fas fa-book"></i> Get Book
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="resource-card book">
+                    <div class="resource-image">
+                        <img src="./images/" alt="Python Crash Course">
+                    </div>
+                    <div class="resource-info">
+                        <h3>Python Crash Course</h3>
+                        <p>By Eric Matthes</p>
+                        <a href="https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280" target="_blank" class="resource-btn">
+                            <i class="fas fa-book"></i> Get Book
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <h3 class="resource-type-title"><i class="fab fa-youtube"></i> Video Lectures</h3>
+            <div class="resources-grid">
+                <!-- Video 1 -->
+                <div class="resource-card video">
+                    <div class="resource-image">
+                        <img src="https://i.ytimg.com/vi/rfscVS0vtbw/maxresdefault.jpg" alt="Python for Beginners">
+                    </div>
+                    <div class="resource-info">
+                        <h3>Python for Beginners</h3>
+                        <p>By freeCodeCamp</p>
+                        <a href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank" class="resource-btn">
+                            <i class="fab fa-youtube"></i> Watch Video
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="resource-card video">
+                    <div class="resource-image">
+                        <img src="https://i.ytimg.com/vi/XKHEtdqhLK8/maxresdefault.jpg" alt="Python Full Course">
+                    </div>
+                    <div class="resource-info">
+                        <h3>Python Full Course</h3>
+                        <p>By Bro Code</p>
+                        <a href="https://www.youtube.com/watch?v=XKHEtdqhLK8" target="_blank" class="resource-btn">
+                            <i class="fab fa-youtube"></i> Watch Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Web Development Section -->
+        <section id="web-dev" class="course-section">
+            <h2><i class="fas fa-globe"></i> Full Stack Web Development</h2>
+            <p class="section-description">Become a complete web developer</p>
+            
+            <h3 class="resource-type-title"><i class="fas fa-book"></i> Recommended Books</h3>
+            <div class="resources-grid">
+                <!-- Book 1 -->
+                <div class="resource-card book">
+                    <div class="resource-image">
+                        <img src="https://m.media-amazon.com/images/I/91asIC1fRwL._SY425_.jpg" alt="Eloquent JavaScript">
+                    </div>
+                    <div class="resource-info">
+                        <h3>Eloquent JavaScript</h3>
+                        <p>By Marijn Haverbeke</p>
+                        <a href="https://www.amazon.com/Eloquent-JavaScript-3rd-Introduction-Programming/dp/1593279507" target="_blank" class="resource-btn">
+                            <i class="fas fa-book"></i> Get Book
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="resource-card book">
+                    <div class="resource-image">
+                        <img src="https://m.media-amazon.com/images/I/71hTq7RTNFL._SY425_.jpg" alt="You Don't Know JS">
+                    </div>
+                    <div class="resource-info">
+                        <h3>You Don't Know JS</h3>
+                        <p>By Kyle Simpson</p>
+                        <a href="./datascience.html" target="_blank" class="resource-btn">
+                            <i class="fas fa-book"></i> Get Book
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="resource-type-title"><i class="fab fa-youtube"></i> Video Lectures</h3>
+            <div class="resources-grid">
+                <!-- Video 1 -->
+                <div class="resource-card video">
+                    <div class="resource-image">
+                        <img src="https://i.ytimg.com/vi/F-sFp_AvHc8/maxresdefault.jpg" alt="Web Development Course">
+                    </div>
+                    <div class="resource-info">
+                        <h3>Full Stack Web Development</h3>
+                        <p>By CodeWithHarry</p>
+                        <a href="https://www.youtube.com/watch?v=F-sFp_AvHc8" target="_blank" class="resource-btn">
+                            <i class="fab fa-youtube"></i> Watch Video
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="resource-card video">
+                    <div class="resource-image">
+                        <img src="https://i.ytimg.com/vi/PkZNo7MFNFg/maxresdefault.jpg" alt="Learn JavaScript">
+                    </div>
+                    <div class="resource-info">
+                        <h3>Learn JavaScript</h3>
+                        <p>By freeCodeCamp</p>
+                        <a href="https://www.youtube.com/watch?v=PkZNo7MFNFg" target="_blank" class="resource-btn">
+                            <i class="fab fa-youtube"></i> Watch Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+
+<!-- Hindi Resources Section -->
+<section id="hindi-resources" class="course-section">
+    <h2><i class="fas fa-language"></i> Hindi Resources</h2>
+    <p class="section-description">Learn web development in Hindi</p>
+    
+    <h3 class="resource-type-title"><i class="fab fa-youtube"></i> Hindi Video Lectures</h3>
+    <div class="resources-grid">
+        <!-- Hindi Video 1 -->
+        <div class="resource-card video">
+            <div class="resource-image">
+                <img src="https://i.ytimg.com/vi/BsDoLVMnmZs/maxresdefault.jpg" alt="HTML in Hindi">
+            </div>
+            <div class="resource-info">
+                <h3>HTML Complete Course in Hindi</h3>
+                <p>By Thapa Technical</p>
+                <a href="https://www.youtube.com/watch?v=BsDoLVMnmZs" target="_blank" class="resource-btn">
+                    <i class="fab fa-youtube"></i> Watch Video
+                </a>
+            </div>
+        </div>
+        
+        <!-- Hindi Video 2 -->
+        <div class="resource-card video">
+            <div class="resource-image">
+                <img src="https://i.ytimg.com/vi/gb7gDluJkK0/maxresdefault.jpg" alt="Python in Hindi">
+            </div>
+            <div class="resource-info">
+                <h3>Python Course in Hindi</h3>
+                <p>By CodeWithHarry</p>
+                <a href="https://www.youtube.com/watch?v=gb7gDluJkK0" target="_blank" class="resource-btn">
+                    <i class="fab fa-youtube"></i> Watch Video
+                </a>
+            </div>
+        </div>
+
+        <!-- Hindi Video 3 -->
+        <div class="resource-card video">
+            <div class="resource-image">
+                <img src="https://i.ytimg.com/vi/6FkM2B92Kqs/maxresdefault.jpg" alt="Web Development in Hindi">
+            </div>
+            <div class="resource-info">
+                <h3>Web Development Course in Hindi</h3>
+                <p>By Apna College</p>
+                <a href="https://www.youtube.com/watch?v=6FkM2B92Kqs" target="_blank" class="resource-btn">
+                    <i class="fab fa-youtube"></i> Watch Video
+                </a>
+            </div>
+        </div>
+        
+        <!-- Hindi Video 4 -->
+        <div class="resource-card video">
+            <div class="resource-image">
+                <img src="https://i.ytimg.com/vi/l1EssrLxt7E/maxresdefault.jpg" alt="JavaScript in Hindi">
+            </div>
+            <div class="resource-info">
+                <h3>JavaScript Tutorial in Hindi</h3>
+                <p>By CodeWithHarry</p>
+                <a href="https://www.youtube.com/watch?v=l1EssrLxt7E" target="_blank" class="resource-btn">
+                    <i class="fab fa-youtube"></i> Watch Video
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DAE Digital Hub. All resources are for educational purposes.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

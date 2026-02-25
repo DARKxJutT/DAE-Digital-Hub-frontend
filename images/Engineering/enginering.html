@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civil Engineering Courses</title>
+    <link rel="stylesheet" href="engineering.js">
+    <link rel="stylesheet" href="engineering.css">
+</head>
+<body>
+    <!-- Navbar -->
+     <header>
+       
+        <nav class="navbar">
+            <div class="logo">
+                <a href="landind-page.html" target="_blank"><img src="images/logo copy.png" alt="College Logo"></a>
+                
+              </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+     </header>
+    
+
+    <!-- 3D Animated Section -->
+    <section class="main-container">
+        <div class="card" id="civil-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h2> Engineering</h2>
+                    <p>Design and Construction of Infrastructure</p>
+                    <button onclick="showMoreInfo()">More Info</button>
+                </div>
+                <div class="card-back">
+                    <h3>Course Overview</h3>
+                    <p>Learn about the planning, design, and construction of infrastructure like roads, bridges, buildings, and more.</p>
+                    <button onclick="showMoreInfo()">Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <h2>Civil Engineering Course Details</h2>
+            <p>This comprehensive course will teach you how to plan and design infrastructure projects such as bridges, highways, dams, and more. You will gain practical skills in material selection, project management, and construction techniques. Hands-on training and theory go hand-in-hand for an enriching experience!</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Civil Engineering Courses | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

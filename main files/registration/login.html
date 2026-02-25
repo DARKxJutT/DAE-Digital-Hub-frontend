@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Sign In</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    
+    <div class="signin-container">
+        <div class="signin-header">
+            <h1>Welcome Back!</h1>
+            <p>Log in to access your account</p>
+        </div>
+        
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+            </div>
+            
+            <div class="remember-forgot">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+            
+           
+            <div id="customModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000;">
+                <p id="modalMessage">Login Success!</p>
+                <button onclick="document.getElementById('customModal').style.display = 'none'">Close</button>
+            </div>
+<a href="../index.html" id="signin-butto"> <li class="signin-button" onclick="alert('Log In Success ')">log in</li></a>
+
+        </form>
+        
+        <div class="social-login">
+            <p>Or Log in with</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-apple"></i></a>
+            </div>
+        </div>
+        
+        <div class="signup-link">
+            Don't have an account? <a href="#">Sign up now</a>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

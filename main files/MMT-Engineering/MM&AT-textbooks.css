@@ -1,0 +1,1227 @@
+:root {
+    --light-blue: #e6f7ff;
+    --medium-blue: #4fc3f7;
+    --dark-blue: #0288d1;
+    --accent-blue: #00bcd4;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --orange: #f19c24;
+    --nav-height: 70px;
+    --year-nav-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gray);
+    color: #333;
+    line-height: 1.6;
+    padding-top: calc(var(--nav-height) + var(--year-nav-height));
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--nav-height);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    color: var(--accent-blue);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Year Navigation */
+.year-navigation {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    z-index: 99;
+    height: var(--year-nav-height);
+}
+
+.year-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+    align-items: center;
+}
+
+/* Bubble Button Effect */
+.bubble-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.bubble-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    border-radius: inherit;
+}
+
+.bubble-btn:hover::before {
+    transform: scale(1);
+}
+
+/* Year Buttons */
+.year-btn {
+    padding: 8px 25px;
+    border-radius: 30px;
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.year-btn:hover {
+    background-color: var(--medium-blue);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.year-btn.active {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+/* Action Buttons */
+.upload-btn-nav, .login-btn {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.upload-btn-nav {
+    background-color: var(--accent-blue);
+}
+
+.login-btn {
+    background-color: var(--orange);
+}
+
+.upload-btn-nav:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.login-btn:hover {
+    background-color: #e68a00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Year Sections */
+.year-section {
+    margin: 40px 0;
+    padding: 30px 0;
+}
+
+.year-section h2 {
+    color: var(--dark-blue);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* Book Cards */
+.book-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,188,212,0.2);
+}
+
+.book-cover {
+    height: 150px;
+    background-color: var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-blue);
+    font-size: 3rem;
+}
+
+.book-info {
+    padding: 20px;
+}
+
+.book-info h3 {
+    margin-bottom: 5px;
+    color: var(--dark-blue);
+}
+
+.book-info p {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.download-btn {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.download-btn:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 0;
+    margin-top: 40px;
+}
+
+.cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.cta p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    animation: fadeInUp 1s ease;
+}
+
+.btn {
+    font-size: 1rem;
+    background-color: var(--orange);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background-color: #e68a00;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .nav-right {
+        gap: 15px;
+    }
+    
+    .year-buttons {
+        gap: 10px;
+    }
+    
+    .year-btn, .upload-btn-nav, .login-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-top: calc(var(--nav-height) + var(--year-nav-height) + 10px);
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        height: auto;
+    }
+    
+    header {
+        height: auto;
+        position: relative;
+    }
+    
+    .year-navigation {
+        position: sticky;
+        top: 0;
+    }
+    
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .books-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .year-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 400px) {
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .year-btn, .upload-btn-nav, .login-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+:root {
+    --light-blue: #e6f7ff;
+    --medium-blue: #4fc3f7;
+    --dark-blue: #0288d1;
+    --accent-blue: #00bcd4;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --orange: #f19c24;
+    --nav-height: 70px;
+    --year-nav-height: 60px;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gray);
+    color: #333;
+    line-height: 1.6;
+    padding-top: calc(var(--nav-height) + var(--year-nav-height));
+}
+
+/* Header styles */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--nav-height);
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+/* Year Navigation */
+.year-navigation {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    z-index: 99;
+    height: var(--year-nav-height);
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Button animations */
+.nav-btn, .year-btn, .cta-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateZ(0);
+}
+
+.nav-btn::before, 
+.year-btn::before,
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+
+.nav-btn:hover::before,
+.year-btn:hover::before,
+.cta-btn:hover::before {
+    transform: scaleX(1);
+}
+
+/* Year buttons */
+.year-btn {
+    padding: 8px 25px;
+    border-radius: 30px;
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.year-btn:hover {
+    background-color: var(--medium-blue);
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Book cards animation */
+.book-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animations for book cards */
+.book-card:nth-child(1) { animation-delay: 0.1s; }
+.book-card:nth-child(2) { animation-delay: 0.2s; }
+.book-card:nth-child(3) { animation-delay: 0.3s; }
+.book-card:nth-child(4) { animation-delay: 0.4s; }
+.book-card:nth-child(5) { animation-delay: 0.5s; }
+.book-card:nth-child(6) { animation-delay: 0.6s; }
+.book-card:nth-child(7) { animation-delay: 0.7s; }
+.book-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* CTA section animation */
+.cta {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hover effect for all buttons */
+button:hover, .nav-btn:hover, .year-btn:hover, .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+button:active, .nav-btn:active, .year-btn:active, .cta-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Responsive adjustments */
+}
+
+@media (max-width: 600px) {
+    /* Mobile adjustments */
+}
+
+
+
+
+:root {
+    --primary-blue: #0288d1;
+    --secondary-blue: #4fc3f7;
+    --accent-blue: #00bcd4;
+    --light-blue: #e6f7ff;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --nav-height: 70px;
+    --animation-duration: 0.4s;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gray);
+    color: #333;
+    padding-top: var(--nav-height);
+}
+
+/* Header Styles */
+.animated-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  height: 120px;
+    background-color: var(--white);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideInDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Navigation Groups */
+.nav-group {
+    display: flex;
+    gap: 15px;
+}
+
+/* Year Navigation */
+.year-nav-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.year-buttons {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+}
+
+.year-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 25px;
+    text-decoration: none;
+    color: var(--primary-blue);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--animation-duration) ease;
+}
+
+.year-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-blue);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--animation-duration) ease;
+}
+
+.year-btn:hover::before,
+.year-btn.active::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.year-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all var(--animation-duration) ease;
+}
+
+.year-text {
+    font-size: 0.8rem;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all var(--animation-duration) ease;
+}
+
+.year-btn:hover .year-number {
+    transform: translateY(-5px);
+}
+
+.year-btn:hover .year-text {
+    opacity: 1;
+    height: auto;
+    transform: translateY(0);
+}
+
+/* Navigation Icons */
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    transition: all var(--animation-duration) ease;
+    position: relative;
+}
+
+.nav-icon:hover {
+    background-color: var(--light-blue);
+    color: var(--accent-blue);
+    transform: scale(1.1);
+}
+
+.nav-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--accent-blue);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all var(--animation-duration) ease;
+}
+
+.nav-icon:hover::after {
+    opacity: 1;
+    transform: scale(1.1);
+    animation: pulse 1.5s infinite;
+}
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .year-btn {
+        padding: 0 15px;
+    }
+    
+    .year-number {
+        font-size: 1.3rem;
+    }
+    
+    .nav-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .year-text {
+        display: none;
+    }
+    
+    .year-btn {
+        padding: 0 12px;
+    }
+    
+    .year-number {
+        font-size: 1.1rem;
+    }
+    
+    .nav-icon {
+        width: 50px;
+        height: 70px;
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+:root {
+    --primary-blue: #0288d1;
+    --secondary-blue: #4fc3f7;
+    --accent-blue: #00bcd4;
+    --light-blue: #e6f7ff;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --nav-height: 80px; /* Increased height */
+    --animation-duration: 0.4s;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gray);
+    color: #333;
+    padding-top: var(--nav-height);
+}
+
+/* Header Styles */
+.animated-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    background-color: var(--white);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideInDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    font-size: 2.2rem; /* Larger logo */
+    color: var(--accent-blue);
+    transition: transform 0.3s ease;
+}
+
+.logo-text {
+    font-size: 1.5rem; /* Larger text */
+    font-weight: bold;
+    color: var(--primary-blue);
+    white-space: nowrap;
+}
+
+.logo-container:hover .logo-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Year Navigation */
+.year-nav-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.year-buttons {
+    display: flex;
+    gap: 15px;
+    height: 100%;
+}
+
+.year-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 25px;
+    text-decoration: none;
+    color: var(--primary-blue);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--animation-duration) ease;
+}
+
+/* ... (keep existing year button styles) ... */
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-btn, .upload-btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-blue);
+    transition: all var(--animation-duration) ease;
+    position: relative;
+}
+
+.login-icon, .upload-icon {
+    font-size: 1.5rem; /* Larger icons */
+    transition: transform 0.3s ease;
+}
+
+.login-text {
+    margin-left: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover .login-text {
+    opacity: 1;
+    width: auto;
+    margin-left: 10px;
+}
+
+.login-btn:hover .login-icon {
+    transform: translateY(-3px);
+}
+
+.upload-btn:hover .upload-icon {
+    transform: translateY(-3px) rotate(15deg);
+}
+
+/* Pulse animation for buttons */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.login-btn:hover, .upload-btn:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    .logo-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        display: none;
+    }
+    .login-text {
+        display: none;
+    }
+    .action-buttons {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-container {
+        padding: 0 10px;
+    }
+    .year-buttons {
+        gap: 8px;
+    }
+    .year-btn {
+        padding: 0 15px;
+    }
+}
+
+
+
+:root {
+    --primary-blue: #71a3dd;
+    --secondary-blue: #58a6ff;
+    --accent-blue: #accbf9;
+    --light-blue: #f6f8fa;
+    --white: #ffffff;
+    --nav-height: 85px;
+    --animation-duration: 0.3s;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-blue);
+    color: #333;
+    padding-top: var(--nav-height);
+}
+
+/* Header Styles */
+.animated-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 105px;
+    background-color: var(--white);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Mega Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    transition: all var(--animation-duration) ease;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    white-space: nowrap;
+}
+
+/* Year Navigation - Increased Spacing */
+.year-nav-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.year-buttons {
+    display: flex;
+    gap: 40px; /* Increased from 15px to 40px */
+    margin: 0 40px;
+}
+
+.year-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: var(--primary-blue);
+    position: relative;
+    transition: all var(--animation-duration) ease;
+    min-width: 90px;
+}
+
+.year-number {
+    font-size: 2rem; /* Larger number */
+    font-weight: 700;
+    line-height: 1;
+    transition: all var(--animation-duration) ease;
+}
+
+.year-text {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: all var(--animation-duration) ease;
+}
+
+.year-btn:hover {
+    transform: translateY(-3px);
+}
+
+.year-btn:hover .year-number {
+    color: var(--accent-blue);
+    transform: scale(1.1);
+}
+
+.year-btn:hover .year-text {
+    opacity: 1;
+    color: var(--accent-blue);
+}
+
+/* Action Buttons - Right Side */
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.upload-btn, .login-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--animation-duration) ease;
+}
+
+.upload-btn {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+}
+
+.login-btn {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.upload-btn:hover {
+    background-color: #e1e7ff;
+    transform: translateY(-2px);
+}
+
+.login-btn:hover {
+    background-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(31, 111, 235, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .year-buttons {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    .logo-icon {
+        font-size: 2.2rem;
+    }
+    .year-buttons {
+        gap: 20px;
+    }
+    .year-btn {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    .logo-text {
+        display: none;
+    }
+    .year-buttons {
+        gap: 15px;
+        margin: 0 20px;
+    }
+    .year-number {
+        font-size: 1.8rem;
+    }
+    .action-buttons {
+        gap: 10px;
+    }
+    .upload-btn span, .login-btn span {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .year-buttons {
+        gap: 10px;
+    }
+    .year-btn {
+        padding: 8px 12px;
+        min-width: 70px;
+    }
+    .year-number {
+        font-size: 1.5rem;
+    }
+}
